@@ -38,18 +38,19 @@ export class TasksComponent implements OnInit {
     });
 
     function getTimer(t) {
-      if (t.timer !== 'Время на выполнение задачи истекло') {
+      if (t.timer !== 'Время на выполнение задачи истекло' && !t.timer) {
         let hours = +new Date(t.createdDate).getHours() + t.planTime - +new Date().getHours();
         if (hours <= 1) {
-          hours = 0;
-        } else {
-          hours = Math.floor(hours);
-        }
+          return hours = 0;
+        } 
+        hours = Math.floor(hours);
+        
 
         const minutes = (+new Date(t.createdDate).getMinutes() + (t.planTime * 60) - +new Date().getMinutes()) % 60;
         if (hours <= 1 && minutes <= 1) {
           hours === 0;
           minutes === 0;
+          return t.timer = 'Время на выполнение задачи истекло'
         } else {
           return t.timer = `${hours} ч. ${minutes} мин.`;
         }
