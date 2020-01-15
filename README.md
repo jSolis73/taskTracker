@@ -25,3 +25,33 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+## Discription
+
+
+
+
+Менеджер задач
+
+Функционал:
+
+  1. Вход по логину и паролю
+    Пользователи: [
+      {email: dima@mail.ru, password: 123456},
+      {email: lena@mail.ru, password: 654321},
+      {email: alex@mail.ru, password: qwerty}
+    ]
+       
+ 2. Создание задачи, редактирование задачи (при редактировании задачи появляется возможнось установить статус задачи на "Готово"
+  
+ 3. Главная страница
+  
+    Отображение задач: подробный вид, краткий вид, scrum - доска (с использованием drug & drop библиотеки Angular Material. При
+    перемещении задачи в соответствующую колонку меняется статус задачи)
+  
+    Сортировка и поиск задачи по названию
+    
+    Автообновление списка задач через каждую минуту.
+  
+  
+  
