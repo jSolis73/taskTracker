@@ -41,6 +41,8 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
       {email: lena@mail.ru, password: 654321},
       {email: alex@mail.ru, password: qwerty}
     ]
+    
+   Данные пользователей и сама база данных реализована на Firebase
        
  2. Создание задачи, редактирование задачи (при редактировании задачи появляется возможнось установить статус задачи на "Готово"
   
@@ -52,6 +54,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
     Сортировка и поиск задачи по названию
     
     Автообновление списка задач через каждую минуту.
+   
   
   
   
