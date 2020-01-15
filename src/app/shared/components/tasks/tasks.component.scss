@@ -1,0 +1,121 @@
+.table {
+  width: 95%;
+  margin: 0 auto;
+
+  .control-panel {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    .menu-buttons {
+      display: inline-block;
+      height: 45px;
+    
+      ul {
+        margin-top: 0;
+        padding-top: 10px;
+        padding-left: 0;
+        
+        li {
+          display: inline-block;
+          padding-left: 0;
+          margin: 0 5px 0 5px;
+          list-style: none;
+          padding-bottom: .8em;
+      
+          a {
+            font-size: 10pt;
+            color: black;
+            text-decoration: none;
+            padding: .5em .3em; 
+            border-radius: 4px;
+            background: rgb(102, 116, 245);
+            box-shadow: 0 -3px rgb(77, 118, 230) inset;
+            transition: 0.2s;
+            cursor: pointer;
+          }
+        }
+      }
+    }
+
+    .form-control {
+      width: 23%;
+      margin-right: 0;
+      height: 25px;
+      text-align: right;
+      outline: none;
+      padding: 10px 0px 15px 0;
+
+      input {
+        padding: 5px;
+      }
+    }
+  }
+}
+  
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+
+  
+}
+
+table th,
+table td {
+  padding: 0.5rem;
+  text-align: center;
+  font-size: 12pt;
+  
+}
+  
+table th {
+  background: var(--light-color);
+  border-top: 2px solid grey;
+  border-bottom: 2px solid grey;
+  text-align: center;
+  font-size: 0.8em;
+
+}
+  
+table tr {
+  border-bottom: 1px solid grey;
+  background: rgb(216, 221, 241);
+}
+
+table > thead > tr{
+  background: rgb(102, 116, 245);
+}
+  
+select {
+  display: block;
+}
+  
+.filter {
+  margin: 5px auto;
+}
+  
+.button-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  .button {
+    width: 110px;
+    font-weight: 500;
+    color: rgb(22, 22, 22);
+    text-decoration: none;
+    padding: .5em .3em; 
+    border-radius: 4px;
+    background: rgb(102, 116, 245);
+    box-shadow: 0 -3px rgb(77, 118, 230) inset;
+    margin-bottom: 5px;
+    cursor: pointer;
+  }
+
+  button:disabled {
+    cursor: not-allowed;
+  }
+}
+
+

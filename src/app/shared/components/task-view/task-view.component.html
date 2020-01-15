@@ -1,0 +1,53 @@
+<div *ngIf="tasks$ | async as task; else loading">
+  <div class="task">
+    <div class="header">
+      <h1>{{task.title}}</h1>
+    </div>
+
+    <div class="description">
+      <h3>{{task.description}}</h3>
+    </div>
+
+    <div class="info-1">
+
+      <div class="option">
+        <strong>Задача создана:</strong><br>
+        {{task.createdDate | date:'dd LLLL yyyy, HH:mm'}}
+      </div>
+
+      <div class="option">
+        <strong>Приоритет задачи:</strong><br>
+        {{task.priority}}
+      </div>
+
+    </div>
+    <div class="info-2">
+      <div class="option" *ngIf="task.planTime!==0; else spentTime">
+        <strong>Планируемое время выполнения:</strong><br>
+        {{task.planTime}} ч.
+      </div>
+
+      <ng-template #spentTime>
+        <div class="option">
+          <strong>Потраченное время:</strong><br>
+          {{task.spentTime}}
+        </div>
+      </ng-template>
+      
+
+      <div class="option">
+        <strong>Статус выполнения:</strong><br>
+        {{task.status}}
+      </div>
+    </div>
+
+    <div class="button">
+      <a class="button__link" [routerLink]="['']" >К списку задач</a>
+    </div>
+  </div>
+</div>
+  
+<ng-template #loading>
+  <p>Загрузка поста</p>
+</ng-template>
+  

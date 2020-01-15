@@ -1,0 +1,44 @@
+<h2>Scrum доска</h2>
+
+<div cdkDropListGroup class="table">
+
+    <div class="container">
+      <h3>Планируемые задачи</h3>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="planTasks"
+        class="list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="box" *ngFor="let item of planTasks" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+  
+    <div class="container">
+      <h3>Задачи в процессе исполнения</h3>
+  
+      <div
+        cdkDropList
+        [cdkDropListData]="inProcessTasks"
+        class="list"
+        (cdkDropListDropped)="drop($event)">
+        <div class="box" *ngFor="let item of inProcessTasks" cdkDrag>{{item.title}}</div>
+      </div>
+    </div>
+
+    <div class="container">
+        <h3>Выполненные задачи</h3>
+    
+        <div
+          cdkDropList
+          [cdkDropListData]="readyTasks"
+          class="list"
+          (cdkDropListDropped)="drop($event)">
+          <div class="box" *ngFor="let item of readyTasks" >{{item.title}}</div>
+        </div>
+      </div>
+  </div>
+
+  <div class="button">
+    <a [routerLink]="['']">На главную страницу</a>
+  </div>

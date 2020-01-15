@@ -1,0 +1,109 @@
+<form [formGroup]="form" (ngSubmit)="submit()">
+  <h2>Создание новой задачи</h2>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('title').touched && form.get('title').invalid}"
+  >
+    <label for="title">Название задачи:</label>
+
+    <div
+      class="validation"
+      *ngIf="form.get('title').touched && form.get('title').invalid"
+    >
+      <small *ngIf="form.get('title').errors.required">
+        Введите название задачи
+      </small>
+    </div>
+    <input type="text" id="title" formControlName="title">
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('description').touched && form.get('description').invalid}"
+  >
+    <label for="description">Описание задачи:</label>
+    <div
+      class="validation"
+      *ngIf="form.get('description').touched && form.get('description').invalid"
+    >
+      <small *ngIf="form.get('description').errors.required">
+        Введите описание задачи
+      </small>
+    </div>
+    <input type="text" id="description" formControlName="description">
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('priority').touched && form.get('priority').invalid}"
+  >
+    <label for="priority">Выберите приоритет выполнения:</label>
+
+    <div
+      class="validation"
+      *ngIf="form.get('priority').touched && form.get('priority').invalid"
+    >
+      <small *ngIf="form.get('priority').errors.required">
+        Выберите приоритет
+      </small>
+    </div>
+    <select type="text" name="priority" formControlName="priority">
+      <option value="высокий">высокий</option>
+      <option value="средний">средний</option>
+      <option value="низкий">низкий</option>
+    </select>
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('status').touched && form.get('status').invalid}"
+  >
+    <label for="status">Выберите статус выполнения задачи:</label>
+    <div
+      class="validation"
+      *ngIf="form.get('status').touched && form.get('status').invalid"
+    >
+      <small *ngIf="form.get('status').errors.required">
+        Выберите статус
+      </small>
+    </div>
+    <select name="status" formControlName="status">
+      <option value="План">План</option>
+      <option value="В процессе">В процессе</option>
+    </select>
+  </div>
+
+  <div
+    class="form-control"
+    [ngClass]="{invalid: form.get('plan').touched && form.get('plan').invalid}"
+  >
+    <label for="plan-time">Планируемое время выполнения (часов):</label>
+    <div
+      class="validation"
+      *ngIf="form.get('plan').touched && form.get('plan').invalid"
+    >
+      <small *ngIf="form.get('plan').errors.required">
+         Введите планируемое время
+      </small>
+    </div>
+    <input type="number" id="plan" formControlName="plan">
+  </div>
+
+  <div class="buttons">
+    <button
+      type="submit"
+      class="buttons"
+      [disabled]="form.invalid"
+    >Создать</button>
+    
+    <button
+      type="button"
+      class="buttons"
+    >
+      <a [routerLink]="['']" >На главную</a>
+    </button>
+  </div>
+ 
+
+</form>

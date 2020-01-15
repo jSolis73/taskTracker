@@ -1,0 +1,59 @@
+form {
+  h2 {
+    margin-top: 0px;
+    padding-top: 15px;
+    text-align: center;  
+  }
+
+
+  .form-control {
+  width: 90%;
+  margin: 0 auto;
+  }
+
+  input, select {
+    width: 100%;
+    padding: 12px 5px;
+    margin: 25px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(155, 181, 255);
+  }
+    
+  textarea {
+    width: 100%;
+    margin-top: 30px;
+  }
+    
+  button {
+    margin-left: 10%;
+    display: block;
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    padding: .5em .3em; 
+    border-radius: 4px;
+    border: none;
+    background: rgb(102, 116, 245);
+    cursor: pointer;
+
+    a {
+      text-decoration: none;
+      color: black;
+    }
+  }
+    
+  .validation {
+    color: red;
+    font-size: 1.5rem;
+  }
+  
+  .buttons {
+    margin-right: 5%;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+

@@ -1,9 +1,13 @@
+import { Environment } from 'src/app/shared/interfaces';
+
 // This file can be replaced during build by using the `fileReplacements` array.
 // `ng build --prod` replaces `environment.ts` with `environment.prod.ts`.
 // The list of file replacements can be found in `angular.json`.
 
-export const environment = {
-  production: false
+export const environment: Environment = {
+  production: false,
+  ApiKey: 'AIzaSyDJVM6kawmqkNz9T6gACZxETFdkiEyw-g0',
+  dataBaseUrl: 'https://task-tracker-151a8.firebaseio.com'
 };
 
 /*

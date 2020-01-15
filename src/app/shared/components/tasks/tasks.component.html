@@ -1,0 +1,121 @@
+<div *ngIf="tasks.length; else loading" class="table">
+  <div class="control-panel">
+    <div class="menu-buttons">
+      <ul>
+
+        <li>
+          <a (click) = "fullTable=true">Подробный вид</a>
+        </li>
+
+        <li>
+          <a (click) = "fullTable=false">Краткий вид</a>
+        </li>
+
+      </ul>
+    </div>
+
+    <div class="form-control">
+      <input type="text" placeholder="Найти задачу" [(ngModel)]="searchString">
+    </div>
+  </div>
+
+
+  <div *ngIf="fullTable; else shortTable">
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Название</th>
+          <th>
+            Сортировать по приоритету:
+            <select type="text" name="priority" [(ngModel)]="priority" class="filter">
+              <option value="">Показать все</option>
+              <option value="высокий">высокий</option>
+              <option value="средний">средний</option>
+              <option value="низкий">низкий</option>
+            </select>
+          </th>
+          <th>
+            Сортировать по статусу:
+            <select name="status" [(ngModel)]="status" class="filter">
+              <option value="">Показать все</option>
+              <option value="План">План</option>
+              <option value="В процессе">В процессе</option>
+              <option value="Готово">Готово</option>
+            </select>
+          </th>
+          <th>Действие</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let task of tasks
+          | searchTitle: searchString
+          | searchStatus: status
+          | searchPriority: priority;
+          let idx = index"
+        >
+          <td>{{idx + 1}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.priority}}</td>
+          <td>{{task.status}}</td>
+          <td>
+            <div class="button-panel">
+  
+              <div>
+                <button 
+                  [routerLink]="['task', task.id]" 
+                  class="button"
+                >
+                  Открыть
+                </button>
+              </div>
+  
+              <div>
+                <button 
+                  [routerLink]="['task', task.id, 'edit-task']"
+                  class="button"
+                  [disabled]="task.spentTime"
+                >
+                  Редактировать
+                </button>
+              </div>
+  
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <ng-template #shortTable>
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Название</th>
+          
+          <th>
+            Осталось времени:
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr
+          *ngFor="let task of tasks; let idx = index"
+        >
+          <td>{{idx + 1}}</td>
+          <td>{{task.title}}</td>
+          <td>{{task.timer}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+  
+
+</div>
+<ng-template #loading>
+  <p>Получение задач...</p>
+</ng-template>
+  
+  

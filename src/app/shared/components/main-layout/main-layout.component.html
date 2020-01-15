@@ -1,0 +1,29 @@
+<header class="tool-bar">
+  <h1>Менеджер задач</h1>
+  <nav>
+    <ul>
+
+      <li>
+        <a [routerLink]="['/scrum']">Scrum доска</a>
+      </li>
+
+      <li>
+        <a [routerLink]="['/create-task']">Создать задачу</a>
+      </li>
+      
+      <li>
+        <a (click)="logout($event)">Выйти</a>
+      </li>
+
+    </ul>
+  </nav>
+</header>
+
+<main class="container">
+  <router-outlet></router-outlet>
+</main>
+
+
+
+
+

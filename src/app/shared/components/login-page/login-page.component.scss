@@ -1,0 +1,38 @@
+input {
+    width: 100%;
+    padding: 12px 5px;
+    margin: 25px auto;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    border: 1px solid rgb(155, 181, 255);
+  }
+  
+  button {
+    font-weight: 500;
+    color: black;
+    text-decoration: none;
+    padding: .5em .3em; 
+    border-radius: 4px;
+    background: rgb(102, 116, 245);
+    box-shadow: 0 -3px rgb(77, 118, 230) inset;
+  }
+  
+  .alert {
+    color: red;
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .validation {
+    color: red;
+    padding: 10px 10px;
+    font-size: 1.5rem;
+  }
+  
+  .card {
+    width: 50%;
+    margin: 100px auto;
+  }
+  
